@@ -1,6 +1,6 @@
 import numpy as np
 moves =  [(x.split()[0], int(x.split()[1])) for x in open('input').read().rstrip().split('\n')]
-ks = [[np.array((0,0))] for i in range(10)]
+ks = [[np.array(0,0)] for i in range(10)]
 dirs = {'R': (1,0), 'L': (-1,0), 'U': (0,1), 'D': (0,-1)}
 
 move = lambda diff:  np.sign((diff)) if np.linalg.norm(diff) >=2 else np.array((0,0))
