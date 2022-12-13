@@ -5,8 +5,8 @@ def compare_values(left, right):
     match left, right:
         case int(), int(): return (left < right) - (right < left)
         case list(), list():
-            for i in [compare_values(i,j) for i,j in zip(left,right) if compare_values(i,j)!=0]:
-                return i
+            if x := [compare_values(i,j) for i,j in zip(left,right) if compare_values(i,j)!=0]:
+                return x[0]
             return compare_values(len(left), len(right))
         case int(), list(): return compare_values([left], right)
         case list(), int(): return compare_values(left, [right])
