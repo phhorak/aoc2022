@@ -1,4 +1,3 @@
-#from functools import cmp_to_key
 import numpy as np, functools as ft
 pairs =  [list(map(eval,l.split('\n'))) for l in open('input').read().rstrip().split('\n\n')]
 
