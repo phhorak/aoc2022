@@ -1,4 +1,4 @@
-import numpy as np, copy
+    import numpy as np, copy
 input, ms = open('input').read().replace('\n\n', '\n').rstrip().split('\n'), {}
 for l in input:
     match l.split():
