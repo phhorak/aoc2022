@@ -3,6 +3,8 @@ input = [list(map(lambda x:  eval('np.array((' + x + '))'), l.split(' -> '))) fo
 max_x, max_y = max(sum([[x for x,_ in z] for z in input], [])), max(sum([[y for _,y in z] for z in input], []))
 grid = np.zeros([max_x+1000, max_y+3])
 grid[:,max_y+2] = -1
+dirs = {'d': (0,1), 'dr': (-1,1), 'dl': (1,1)}
+count, x, sols  = 0, 1, []
 
 for l in input:
     for p in range(len(l)-1):
@@ -25,12 +27,6 @@ def drop_sand(grid, c):
 
     grid[*c] = 1
     return 1, p1
-
-
-dirs = {'d': (0,1), 'dr': (-1,1), 'dl': (1,1)}
-
-
-count, x, sols  = 0, 1, []
 
 while x:
     x, p = drop_sand(grid, np.array((500,0)))
